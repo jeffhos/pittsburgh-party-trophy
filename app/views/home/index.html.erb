@@ -55,17 +55,34 @@
 
   <% @parties.each do | party | %>
 
-    <hr class="featurette-divider">
+  <div class="row featurette">
+    <div class="container-fluid">
+      <h2 class="featurette-heading"><%= party.name %></h2>
+      <p class="lead">
+        <%= party.description.truncate(300) %>
+        <%= link_to "More »", party %>
+      </p>
+    </div>
+  </div>
+
+    <!-- <hr class="featurette-divider">
 
     <div class="row featurette">
-      <div class="col-md-7">
-        <h2 class="featurette-heading"><%= party.name %></h2>
-        <p class="lead"><%= party.description.truncate(300) %></p>
-      </div>
-      <div class="col-md-5">
-        <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-      </div>
-    </div>
+      <% if party.images.empty? %>
+        <div class="container-fluid">
+          <h2 class="featurette-heading"><%= party.name %></h2>
+          <p class="lead"><%= party.description.truncate(300) %></p>
+        </div>
+      <% else %>
+        <div class="col-md-7">
+          <h2 class="featurette-heading"><%= party.name %></h2>
+          <p class="lead"><%= party.description.truncate(300) %></p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+      <% end %>
+    </div> -->
 
   <% end %>
 

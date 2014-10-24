@@ -1,20 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>
+    <%= @party.name %>
+    <% unless @party.happened_on.nil? %>
+      <br/>
+      <small><%= @party.happened_on.to_formatted_s(:long) %></small>
+    <% end %>
+  </h1>
 
-<p>
-  <b>Name:</b>
-  <%= @party.name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @party.description %>
-</p>
-
-<p>
-  <b>Approved:</b>
-  <%= @party.approved %>
-</p>
-
-
-<%= link_to 'Edit', edit_party_path(@party) %> |
-<%= link_to 'Back', parties_path %>
+  <%= simple_format @party.description, class: 'lead' %>
+</div>
