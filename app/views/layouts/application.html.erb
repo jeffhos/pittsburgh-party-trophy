@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<div class="navbar navbar-default navbar-static-top" role="navigation">
+<div id="navbar" class="navbar navbar-inverse navbar-static-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -22,10 +22,18 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><%= link_to "About", controller: "home", action: "about" %></li>
-        <li><%= link_to "Party Log", parties_path %></li>
-        <li><%= link_to "Submit Your Party", new_party_path %></li>
-        <li><%= link_to "Contact", controller: "home", action: "contact" %></li>
+        <li class="<%= active_page?(controller: 'home', action: 'about') %>">
+          <%= link_to "About", controller: "home", action: "about" %>
+        </li>
+        <li class="<%= active_page?(parties_path) %>">
+          <%= link_to "Party Log", parties_path %>
+        </li>
+        <li class="<%= active_page?(new_party_path) %>">
+          <%= link_to "Submit Your Party", new_party_path %>
+        </li>
+        <li class="<%= active_page?(controller: 'home', action: 'contact') %>">
+          <%= link_to "Contact", controller: "home", action: "contact" %>
+        </li>
       </ul>
     </div>
   </div>
