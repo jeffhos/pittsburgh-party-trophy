@@ -1,7 +1,7 @@
 class PartiesController < ApplicationController
 
   def index
-    @parties = Party.all
+    @parties = Party.order('happened_on DESC').page(params[:page]).per(5)
   end
 
   def show

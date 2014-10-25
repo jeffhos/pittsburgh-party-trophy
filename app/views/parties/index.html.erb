@@ -1,27 +1,15 @@
-<h1>Listing parties</h1>
+<div class="container">
+  <h1>Log of Parties</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Approved</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <% @parties.each do | party | %>
+  <h2><%= party.name %> <small><%= party.happened_on.to_s(:long) %></small></h2>
+  <p class="lead">
+    <%= party.description.truncate(300) %>
+    <%= link_to "More »", party %>
+  </p>
+  <br/>
+  <% end %>
 
-<% @parties.each do |party| %>
-  <tr>
-    <td><%= party.name %></td>
-    <td><%= party.description %></td>
-    <td><%= party.approved %></td>
-    <td><%= link_to 'Show', party %></td>
-    <td><%= link_to 'Edit', edit_party_path(party) %></td>
-    <td><%= link_to 'Destroy', party, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+  <%= paginate @parties %>
 
-<br />
-
-<%= link_to 'New Party', new_party_path %>
+</div>
