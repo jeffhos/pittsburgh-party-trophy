@@ -82,6 +82,7 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
+    pg (0.17.1)
     polyglot (0.3.5)
     rack (1.4.5)
     rack-cache (1.2)
@@ -146,6 +147,7 @@ DEPENDENCIES
   kaminari (~> 0.16)
   magnific-popup-rails
   paperclip (~> 4.2)
+  pg
   rails (= 3.2.19)
   sass-rails (~> 3.2.3)
   sqlite3
