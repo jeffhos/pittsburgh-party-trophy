@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
+//= require bootstrap-filestyle
+//= require magnific-popup
 //= require_tree .
