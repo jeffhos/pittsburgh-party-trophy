@@ -8,7 +8,4 @@ class HomeController < ApplicationController
 
   def thanks
   end
-
-  def contact
-  end
 end
