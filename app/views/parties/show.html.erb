@@ -9,23 +9,23 @@
 
   <%= simple_format @party.description, class: 'lead' %>
 
-  <% if @party.image1 or @party.image2 or @party.image3 %>
+  <% if @party.image1.exists? or @party.image2.exists? or @party.image3.exists? %>
     <div class="row">
-      <% if @party.image1 %>
+      <% if @party.image1.exists? %>
           <div class="col-xs-6 col-md-3">
             <%= link_to @party.image1.url, :class => 'thumbnail' do %>
               <%= image_tag @party.image1.url(:thumb) %>
             <% end %>
           </div>
       <% end %>
-      <% if @party.image2 %>
+      <% if @party.image2.exists? %>
           <div class="col-xs-6 col-md-3">
             <%= link_to @party.image2.url, :class => 'thumbnail' do %>
                 <%= image_tag @party.image2.url(:thumb) %>
             <% end %>
           </div>
       <% end %>
-      <% if @party.image3 %>
+      <% if @party.image3.exists? %>
           <div class="col-xs-6 col-md-3">
             <%= link_to @party.image3.url, :class => 'thumbnail' do %>
                 <%= image_tag @party.image3.url(:thumb) %>

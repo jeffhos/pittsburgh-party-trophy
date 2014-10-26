@@ -21,7 +21,7 @@
     <hr class="featurette-divider">
 
     <div class="row featurette">
-      <% if party.image1 %>
+      <% if party.image1.exists? %>
         <div class="col-md-7">
           <h2 class="featurette-heading"><%= party.name %></h2>
           <p class="lead">
