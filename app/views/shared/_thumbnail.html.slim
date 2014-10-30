@@ -1,0 +1,4 @@
+- if image.exists?
+  .col-xs-6.col-md-3
+    = link_to image.url, :class => 'thumbnail' do
+      = image_tag image.url(:thumb)

@@ -1,7 +1,7 @@
 class PartiesController < ApplicationController
 
   def index
-    @parties = Party.where('approved = ?', true).order('happened_on DESC').page(params[:page]).per(5)
+    @parties = Party.where(:approved => true).order('happened_on DESC').page(params[:page]).per(5)
   end
 
   def show
@@ -16,9 +16,9 @@ class PartiesController < ApplicationController
     @party = Party.new(params[:party])
 
     if @party.save
-      redirect_to controller: :home, action: :thanks
+      redirect_to :controller => :home, :action => :thanks
     else
-      render action: "new"
+      render :action => 'new'
     end
   end
 

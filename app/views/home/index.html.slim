@@ -1,0 +1,22 @@
+.jumbotron.masthead
+  h1 Pittsburgh Party Trophy
+  p A traveling testament to good times in the city.
+
+.container.marketing
+  - if @parties.empty?
+    h2
+      em No one's entered a party yet.  Be the first!
+  - else
+    - @parties.each do | party |
+      hr.featurette-divider
+      = render :partial => 'shared/party_short', :locals => { :party => party }
+
+  hr.featurette-divider
+
+  footer
+    p.pull-right
+      a href="#" Back to top
+    p
+      ' &copy; 2014 Pittsburgh Party Trophy, Inc.  Contact the
+      = mail_to 'webmaster@eclecsia.org', 'webmaster'
+      |.

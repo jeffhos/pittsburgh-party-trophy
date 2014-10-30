@@ -1,0 +1,8 @@
+.container
+  h1 Travels of the Trophy
+
+  - @parties.each do | party |
+    = render :partial => 'shared/party_short', :locals => { :party => party }
+    br
+
+  = paginate @parties

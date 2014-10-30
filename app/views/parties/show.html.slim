@@ -1,0 +1,14 @@
+.container
+  h1
+    = @party.name
+    - unless @party.happened_on.nil?
+      br
+      small= @party.happened_on.to_formatted_s(:long)
+
+  = simple_format @party.description, :class => 'lead'
+
+  - if @party.image1.exists? or @party.image2.exists? or @party.image3.exists?
+    .row
+      = render :partial => 'shared/thumbnail', :locals => { :image => @party.image1 }
+      = render :partial => 'shared/thumbnail', :locals => { :image => @party.image2 }
+      = render :partial => 'shared/thumbnail', :locals => { :image => @party.image3 }

@@ -1,0 +1,45 @@
+.container
+  h1 Tell Us About Your Party!
+
+  p Let us know the theme and whatever else was interesting about your party!
+
+  / Displaly any error messages
+  - @party.errors.full_messages.each do | error_message |
+    .alert.alert-danger role="alert"
+      = error_message
+
+  = form_for(@party, :html => { :multipart => true }) do | form |
+
+    - display_classes = %w(form-group)
+    - unless @party.errors[:name].empty?
+      - display_classes += %w(has-error has-feedback)
+    div class=display_classes
+      = form.label :name
+      = form.text_field :name, :class => 'form-control input-lg'
+      - unless @party.errors[:name].empty?
+        span.glyphicon.glyphicon-remove.form-control-feedback
+
+    - display_classes = %w(form-group)
+    - unless @party.errors[:happened_on].empty?
+      - display_classes += %w(has-error)
+    div class=display_classes
+      = form.label :happened_on, 'When did it happen?'
+      .input-group.date
+        = form.text_field :happened_on, :class => 'form-control'
+        span class="input-group-addon"
+          i class="glyphicon glyphicon-calendar"
+
+    .form-group
+      = form.label :description
+      = form.text_area :description, :class => 'form-control'
+
+    p If you'd like, upload some pictures of your party:
+    .form-group
+      = form.file_field :image1, :class => 'filestyle'
+    .form-group
+      = form.file_field :image2, :class => 'filestyle'
+    .form-group
+      = form.file_field :image3, :class => 'filestyle'
+
+    .actions
+      = form.submit 'Submit Your Party', :class => 'btn btn-primary btn-lg'

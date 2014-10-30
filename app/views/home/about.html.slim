@@ -1,0 +1,18 @@
+.container
+  .col-md-8
+    h1 About the Pittsburgh Party Trophy
+
+    p.lead
+      ' Welcome!  If you've arrived here, it's probably because you found a strange trophy with
+        this URL written on it.  If so, then congratulations! Your party was a stop on the historic
+        journey of this monument to the good times we have here.  Take a moment to bask in its
+        glory, then let us know about the good times it had.
+      = link_to 'Tell us about the party it visited', new_party_path
+      |.
+
+    p.lead
+      | But don't keep it around!  Take it to the next party you go to, and pass it on!  You can
+        continue to follow its exploits here.
+
+  .col-md-4
+    = image_tag 'napolean.jpg'

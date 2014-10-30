@@ -1,0 +1,19 @@
+.row
+  - if party.image1.exists?
+    .col-md-8
+      h2
+        = party.name
+        small<= party.happened_on.to_s(:long)
+      p class="lead"
+        => party.description.truncate(300)
+        = link_to "More »", party
+    .col-md-4
+      = image_tag party.image1.url(:thumb), :class => "img-responsive pull-right"
+  - else
+    .container-fluid
+      h2
+        = party.name
+        small<= party.happened_on.to_s(:long)
+      p class="lead"
+        => party.description.truncate(300)
+        = link_to "More »", party
