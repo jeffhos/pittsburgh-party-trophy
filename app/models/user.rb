@@ -1,3 +1,3 @@
 class User < ActiveRecord::Base
-  include Clearance::User
+  devise :database_authenticatable, :rememberable, :trackable
 end

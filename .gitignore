@@ -16,3 +16,9 @@
 
 # Ignore RubyMine config files
 /.idea
+
+# Ignore compiled assets
+/public/assets/*
+
+# Ignore uploaded images
+/public/system/*

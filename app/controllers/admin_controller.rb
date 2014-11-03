@@ -1,6 +1,5 @@
 class AdminController < ApplicationController
-  before_filter :authorize
-  #before_filter :blah
+  before_action :authenticate_user!
 
   def index
     @parties = Party.where(:approved => false)

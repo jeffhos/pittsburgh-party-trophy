@@ -19,7 +19,7 @@ gem 'slim'
 gem 'slim-rails'
 
 gem 'jquery-rails'
-gem 'clearance'
+gem 'devise'
 gem 'autoprefixer-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'kaminari'
