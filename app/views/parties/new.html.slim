@@ -31,9 +31,9 @@
 
     .form-group
       = form.label :description
-      = form.text_area :description, :class => 'form-control'
+      = form.text_area :description, :class => 'form-control', :rows => 10
 
-    p If you'd like, upload some pictures of your party:
+    = form.label "If you'd like, upload some pictures of your party, and especially of the trophy at your party:"
     .form-group
       = form.file_field :image1, :class => 'filestyle'
     .form-group

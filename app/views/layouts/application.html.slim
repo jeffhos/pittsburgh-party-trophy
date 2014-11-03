@@ -18,11 +18,15 @@ html
           = link_to 'Pittsburgh Party Trophy', { :controller => 'home', :action => 'index' }, :class => 'navbar-brand'
         .navbar-collapse.collapse
           ul class="nav navbar-nav"
-            li class=active_page?(controller: 'home', action: 'about')
-              = link_to "About", controller: "home", action: "about"
+            li class=active_page?(:controller => 'home', :action => 'about')
+              = link_to "About", :controller => "home", :action => "about"
             li class=active_page?(parties_path)
               = link_to "Party Log", parties_path
             li class=active_page?(new_party_path)
               = link_to "Submit Your Party", new_party_path
+          - if signed_in?
+            ul class="nav navbar-nav navbar-right"
+              li
+                = link_to 'Sign out', sign_out_path, :method => :delete
 
     == yield
