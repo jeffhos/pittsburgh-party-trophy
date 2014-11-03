@@ -11,15 +11,12 @@ group :production do
   gem 'mysql2'
 end
 
-# Gems used only for assets and not required in production environments by default.
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'bootstrap-sass'
-  gem 'uglifier'
-  gem 'slim'
-  gem 'slim-rails'
-end
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'bootstrap-sass'
+gem 'uglifier'
+gem 'slim'
+gem 'slim-rails'
 
 gem 'jquery-rails'
 gem 'clearance'
