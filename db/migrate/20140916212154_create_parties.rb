@@ -3,7 +3,7 @@ class CreateParties < ActiveRecord::Migration
     create_table :parties do |t|
       t.string :name
       t.text :description
-      t.boolean :approved, default: false
+      t.boolean :approved, default => false
       t.date :happened_on
       t.attachment :image1
       t.attachment :image2

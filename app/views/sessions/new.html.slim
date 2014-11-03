@@ -2,6 +2,10 @@
   #clearance.sign-in
     h2= t '.title'
 
+    - flash.each do |key, value|
+      .alert.alert-warning(role="alert")
+        = value
+
     = form_for :session, :url => session_path do |form|
       .form-group
         = form.label :email

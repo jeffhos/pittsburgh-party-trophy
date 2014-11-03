@@ -13,7 +13,7 @@ class PartiesController < ApplicationController
   end
 
   def create
-    @party = Party.new(params[:party])
+    @party = Party.new(party_params)
 
     if @party.save
       send_notifications(@party)
@@ -28,6 +28,10 @@ class PartiesController < ApplicationController
     User.all.each do |user|
       NotificationMailer.party_entered(party, user).deliver
     end
+  end
+
+  def party_params
+    params.require(:party).permit(:name, :happened_on, :description, :image1, :image2, :image3)
   end
 
 end

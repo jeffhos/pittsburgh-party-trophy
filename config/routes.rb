@@ -4,7 +4,7 @@ Trophy::Application.routes.draw do
   resources :parties
 
   # Old-skool routing
-  match ':controller(/:action(/:id))(.:format)'
+  get ':controller(/:action(/:id))(.:format)'
 
   # Default route
   root :to => 'home#index'
