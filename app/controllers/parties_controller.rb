@@ -16,10 +16,17 @@ class PartiesController < ApplicationController
     @party = Party.new(params[:party])
 
     if @party.save
-      NotificationMailer.party_entered(@party).deliver
+      send_notifications(@party)
       redirect_to :controller => :home, :action => :thanks
     else
       render :action => 'new'
+    end
+  end
+
+  private
+  def send_notifications(party)
+    User.all.each do |user|
+      NotificationMailer.party_entered(party, user).deliver
     end
   end
 

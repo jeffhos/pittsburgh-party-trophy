@@ -26,7 +26,7 @@ module Trophy
     # config.time_zone = 'Central Time (US & Canada)'
 
     # Configure the default encoding used in templates for Ruby 1.9.
-    config.encoding = "utf-8"
+    config.encoding = 'utf-8'
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
@@ -51,7 +51,7 @@ module Trophy
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
 
     # Default URL to use for links in e-mail messages
-    config.action_mailer.default_url_options = { :host => 'pittsburghpartytrophy.com' }
+    config.action_mailer.default_url_options = { :host => Socket.gethostname() }
     config.action_mailer.delivery_method = :sendmail
   end
 end
