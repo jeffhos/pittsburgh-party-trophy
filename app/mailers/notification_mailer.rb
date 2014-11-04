@@ -1,5 +1,5 @@
 class NotificationMailer < ActionMailer::Base
-  default :from => 'notifications@pittsburghpartytrophy.com'
+  default :from => 'jeffhos@pittsburghpartytrophy.com'
 
   def party_entered(party, user)
     @party = party
